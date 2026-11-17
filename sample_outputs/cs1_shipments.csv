@@ -1,0 +1,17 @@
+﻿file_name,status,usable,awb,awb_source,weight_kg,length_cm,width_cm,height_cm,confidence,notes
+blocked_1.jpg,LABEL_BLOCKED,N,,,,,,,,skin-coloured area (58%) over label: hand/object likely covering it
+blocked_2.jpg,LABEL_BLOCKED,N,,,,,,,,skin-coloured area (58%) over label: hand/object likely covering it
+blurry_1.jpg,LABEL_UNREADABLE,N,,,,,,,,image very blurry (sharpness 1); nothing readable
+clean_1.jpg,OK,Y,534439589175,barcode+ocr,0.35,20.0,15.0,10.0,0.98,
+clean_2.jpg,OK,Y,139576827340,barcode+ocr,0.35,30.0,20.0,12.0,0.98,
+clean_3.jpg,OK,Y,722026593455,barcode+ocr,,,,,0.98,"not present on label: weight, dimensions; "
+clean_4.jpg,OK,Y,418399561389,barcode,2.4,20.0,15.0,10.0,0.93,
+clean_5.jpg,OK,Y,802532973417,barcode,0.8,30.0,20.0,12.0,0.93,
+clean_6.jpg,OK,Y,570435156322,barcode+ocr,,,,,0.98,"not present on label: weight, dimensions; "
+corrupt.jpg,IMAGE_CORRUPT,N,,,,,,,,Could not decode file as an image
+empty_belt_1.jpg,NO_PARCEL,N,,,,,,,,no label-like text or barcode detected
+empty_belt_2.jpg,NO_PARCEL,N,,,,,,,,no label-like text or barcode detected
+partial_1.jpg,PARTIAL_PARCEL,REVIEW,480828963614,barcode,1.5,22.0,14.0,9.0,0.93,label touches image edge - other fields may be cut off; AWB itself verified; 
+partial_2.jpg,PARTIAL_PARCEL,REVIEW,416832148161,barcode,1.5,22.0,14.0,9.0,0.93,label touches image edge - other fields may be cut off; AWB itself verified; 
+two_parcels_1.jpg,MULTIPLE_PARCELS,N,,,,,,,,"multiple distinct AWBs in frame: 957700650132, 477420841671; not assigning"
+two_parcels_2.jpg,MULTIPLE_PARCELS,N,,,,,,,,"multiple distinct AWBs in frame: 561661581186, 620850423169; not assigning"

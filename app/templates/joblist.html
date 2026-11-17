@@ -1,0 +1,2 @@
+<table class="t"><tr><th>When</th><th>Job</th><th>Status</th><th></th></tr>
+{% for j in recent %}<tr><td>{{ j.created|int|datetimeformat }}</td><td>{{ j.title }}</td><td><span class="pill s-{{ j.status }}">{{ j.status }}</span> {{ j.message if j.status=='error' else '' }}</td><td><a href="/jobs/{{ j.id }}">open</a></td></tr>{% endfor %}</table>

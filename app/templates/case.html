@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% block body %}
+{% if error %}<div class="card err">{{ error }}</div>{% endif %}
+{% if case == "cs1" %}
+<h1>1 · Parcel images → shipment data</h1>
+<p>Select many JPG/PNG photos (or one <b>.zip</b> of them). Each image gets one row: AWB, weight, dimensions — or a status flag explaining why a clean read wasn't possible.</p>
+<form method="post" enctype="multipart/form-data" class="card" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='Uploading…'">
+<label>Images or zip <input type="file" name="files" multiple accept="image/*,.zip" required></label>
+<button>Start processing</button></form>
+<form method="post" class="inline"><input type="hidden" name="sample" value="1"><button class="ghost">…or run on the bundled sample images (16 synthetic photos)</button></form>
+{% elif case == "cs2" %}
+<h1>2 · Wagesheet vs PF / ESIC ECR</h1>
+<p>Upload the vendor wagesheet and the ECR PDF(s). You get a per-employee verdict for PF and ESIC (Matched / Name mismatch / Amount mismatch / Missing) as an Excel file.</p>
+<form method="post" enctype="multipart/form-data" class="card" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='Uploading…'">
+<label>Wagesheet (.xlsx) <input type="file" name="wagesheet" accept=".xlsx,.xls,.csv"></label>
+<label>PF ECR (.pdf) <input type="file" name="pf_ecr" accept=".pdf"></label>
+<label>ESIC ECR (.pdf) <input type="file" name="esic_ecr" accept=".pdf"></label>
+<label>Amount tolerance (₹) <input type="number" step="0.5" min="0" name="tolerance" value="1" style="width:6em"> <span class="muted">PF/ESIC are rounded to whole rupees</span></label>
+<button>Verify</button></form>
+<form method="post" class="inline"><input type="hidden" name="sample" value="1"><button class="ghost">…or run on the bundled sample (220 employees, 8-page PF ECR)</button></form>
+{% else %}
+<h1>3 · Daily FC P&amp;L monitor</h1>
+<p>Upload day-level data (Day, [FC], Revenue, Manpower, Packaging, Power &amp; Fuel, FC Rent, Equipment Rentals, Overheads). Target ranges are read from the workbook if present, else from <code>config/targets.csv</code>.</p>
+<form method="post" enctype="multipart/form-data" class="card" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='Uploading…'">
+<label>P&amp;L data (.xlsx / .csv) <input type="file" name="data" accept=".xlsx,.xls,.csv"></label>
+<label>Targets file (optional) <input type="file" name="targets" accept=".xlsx,.xls,.csv"></label>
+<label>FC → manager mapping (optional CSV: FC, Manager, Email, Slack) <input type="file" name="managers" accept=".csv"></label>
+<label>Digest date (optional, default = latest day) <input type="date" name="report_date"></label>
+<label>Fallback recipient email <input type="email" name="fallback_email" placeholder="used when an FC has no manager mapped"></label>
+<label class="chk"><input type="checkbox" name="send_real" value="1"> Actually send (needs SMTP_* / SLACK_WEBHOOK_URL env vars — otherwise saved as .eml in dry-run mode)</label>
+<button>Run monitor</button></form>
+<form method="post" class="inline"><input type="hidden" name="sample" value="1"><button class="ghost">…or run on the bundled sample (3 FCs × 14 days with injected anomalies)</button></form>
+{% endif %}{% endblock %}

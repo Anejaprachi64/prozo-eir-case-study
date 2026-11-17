@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}
+<h1 id="title">Job</h1><p class="muted">You can close this tab — results stay at <code>/jobs/{{ jid }}</code> and under "Recent jobs".</p>
+<div id="prog" class="card"><div class="bar"><div id="fill"></div></div><p id="msg">Loading…</p></div>
+<div id="out"></div>
+<script>window.JID="{{ jid }}";</script><script src="{{ url_for('static', filename='app.js') }}"></script>{% endblock %}

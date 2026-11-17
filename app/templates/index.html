@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block body %}
+<h1>Three supply-chain automations</h1>
+<p class="muted">Upload → it runs in the background → come back any time. Nothing here needs a paid API key.</p>
+<div class="grid">
+<a class="card tile" href="/cs1"><h2>1 · Parcel images → shipment data</h2><p>Bulk-upload parcel photos (or a zip). Reads AWB / weight / dimensions from the label, or flags why it can't. Download CSV.</p></a>
+<a class="card tile" href="/cs2"><h2>2 · Wagesheet vs ECR</h2><p>Check every employee's PF and ESIC deduction against the filed ECR PDFs, with tolerant name matching. Download Excel.</p></a>
+<a class="card tile" href="/cs3"><h2>3 · FC P&amp;L monitor</h2><p>CM1/CM2, anomaly log, plain-language insights, colour-coded dashboard and per-FC digest emails.</p></a></div>
+{% if recent %}<h2>Recent jobs</h2>{% include "joblist.html" %}{% endif %}{% endblock %}

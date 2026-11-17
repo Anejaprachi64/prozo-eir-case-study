@@ -1,0 +1,14 @@
+flask>=3.0
+pandas>=2.0
+openpyxl>=3.1
+numpy
+pillow
+opencv-python-headless>=4.8
+rapidocr-onnxruntime>=1.3     # free, offline OCR (models bundled in the wheel)
+zxing-cpp>=2.2                # free barcode decoder (Code128 etc.)
+pymupdf>=1.24                 # fast PDF word extraction
+rapidfuzz>=3.0
+# only needed to regenerate sample data / run tests
+reportlab
+python-barcode
+pytest

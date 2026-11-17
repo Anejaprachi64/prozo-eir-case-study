@@ -1,0 +1,12 @@
+Date,FC,Line Item,% of Revenue,Target Range,Status,Acknowledged
+2026-05-25,FC Gurugram,Packaging Cost,9.2,5–8%,Above max,
+2026-05-27,FC Ludhiana,Manpower Cost,32.8,22–30%,Above max,
+2026-05-27,FC Ludhiana,Power & Fuel,15.2,8–14%,Above max,
+2026-05-27,FC Ludhiana,CM1,60.2,65–70% (±3pp),Below tolerance,
+2026-05-27,FC Ludhiana,CM2,10.1,15–30% (±3pp),Below tolerance (RED),
+2026-05-28,FC Ludhiana,Power & Fuel,14.6,8–14%,Above max,
+2026-05-28,FC Ludhiana,CM2,11.9,15–30% (±3pp),Below tolerance (RED),
+2026-05-29,FC Ludhiana,Power & Fuel,14.4,8–14%,Above max,
+2026-05-30,FC Pune,FC Rent,12.0,14–22%,Below min,
+2026-05-30,FC Pune,Overheads,5.0,6–10%,Below min,
+2026-05-30,FC Pune,CM2,36.0,15–30% (±3pp),Above tolerance (BLUE - suspicious),

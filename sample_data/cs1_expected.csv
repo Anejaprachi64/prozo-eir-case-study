@@ -1,0 +1,17 @@
+file,expected_status,awb,weight_kg,dims
+clean_1.jpg,OK,534439589175,0.35,20x15x10
+clean_2.jpg,OK,139576827340,0.35,30x20x12
+clean_3.jpg,OK,722026593455,,
+clean_4.jpg,OK,418399561389,2.4,20x15x10
+clean_5.jpg,OK,802532973417,0.8,30x20x12
+clean_6.jpg,OK,570435156322,,
+empty_belt_1.jpg,NO_PARCEL,,,
+empty_belt_2.jpg,NO_PARCEL,,,
+two_parcels_1.jpg,MULTIPLE_PARCELS,,,
+two_parcels_2.jpg,MULTIPLE_PARCELS,,,
+partial_1.jpg,PARTIAL_PARCEL,,,
+partial_2.jpg,PARTIAL_PARCEL,,,
+blocked_1.jpg,LABEL_BLOCKED,,,
+blocked_2.jpg,LABEL_BLOCKED,,,
+blurry_1.jpg,LABEL_UNREADABLE,,,
+corrupt.jpg,IMAGE_CORRUPT,,,
